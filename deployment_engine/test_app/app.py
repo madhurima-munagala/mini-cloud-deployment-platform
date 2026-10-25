@@ -12,7 +12,7 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(message.encode())
 
     def log_message(self, format, *args):
-        pass
+        print(f"[HTTP] {format % args}", flush=True)
 
 
 server = HTTPServer(("0.0.0.0", 8000), Handler)
